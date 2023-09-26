@@ -1,0 +1,200 @@
+/* Define CSS variables for colors */
+:root {
+    --color-dark: #374151;
+    --color-darker: #1F2937;
+    --color-darkest: #111827;
+    --color-grey: #6B7280;
+    --color-pink: #EC4899;
+    --color-purple: #8B5CF6;
+    --color-light: #EEE;
+    --color-black: #000; /* Define a black color variable */
+    --color-white: #FFF; /* Define a white color variable */
+}
+
+/* Global reset and styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global typography and layout */
+body {
+    background-image: url('your-image-url.jpg'); /* Replace 'your-image-url.jpg' with the actual URL or path to your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Header styles */
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--color-black);
+    margin-bottom: 1rem;
+}
+
+/* Add CSS styles for datetime-local input */
+#new-task-datetime {
+    flex: 1 1 0%;
+    background-color: var(--color-darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--color-light);
+    font-size: 1.25rem;
+    border: 1px solid var(--color-grey); /* Add a border for visual separation */
+}
+
+/* Style the placeholder text of datetime-local input */
+#new-task-datetime::placeholder {
+    color: var(--color-darker);
+}
+
+/* Adjust datetime-local input on hover and focus */
+#new-task-datetime:hover,
+#new-task-datetime:focus {
+    border-color: var(--color-darker); /* Change the border color on hover and focus */
+}
+
+/* Adjust datetime-local input on error (required field) */
+#new-task-datetime:invalid {
+    border-color: var(--color-darker); /* Change the border color for invalid input */
+}
+
+/* Style the output of the selected date and time */
+#new-task-datetime::before,
+#new-task-datetime::after {
+    color: var(--color-white); /* Set the text color to white */
+}
+
+/* New task form styles */
+#new-task-form {
+    display: flex;
+}
+
+input,
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#new-task-input {
+    flex: 1 1 0%;
+    background-color: var(--color-darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--color-light);
+    font-size: 1.25rem;
+}
+
+#new-task-input::placeholder {
+    color: var(--color-grey);
+}
+
+#new-task-submit {
+    color: var(--color-pink);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--color-pink), var(--color-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#new-task-submit:hover {
+    opacity: 0.8;
+}
+
+#new-task-submit:active {
+    opacity: 0.6;
+}
+
+/* Main content styles */
+main {
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Task list styles */
+.task-list {
+    padding: 1rem;
+}
+
+.task-list h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-black);
+    margin-bottom: 1rem;
+}
+
+/* Task styles */
+.task {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.task .content {
+    flex: 1 1 0%;
+}
+
+.task .content .text {
+    color: var(--color-light);
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+    color: var(--color-pink);
+}
+
+.task .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.task .actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.task .actions button:hover {
+    opacity: 0.8;
+}
+
+.task .actions button:active {
+    opacity: 0.6;
+}
+
+.task .actions .edit {
+    background-image: linear-gradient(to right, var(--color-pink), var(--color-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete {
+    color: rgb(227, 94, 121);
+}
